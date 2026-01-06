@@ -8,7 +8,7 @@ The application integrates real APIs, secure authentication, Stripe payments, an
 ## 🚀 Live Demo
 
 🔗 **Live Website:**  
-[> [](https://ecommerce-swift-basket.vercel.app/)
+https://ecommerce-swift-basket.vercel.app/
 
 
 ---
