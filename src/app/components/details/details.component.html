@@ -1,0 +1,21 @@
+@if(productData) {
+<section class="w-[95%] mx-auto">
+  <div class="grid grid-cols-12 items-center gap-5">
+    <div class="col-span-3">
+      <img [src]="productData.imageCover" alt="" />
+    </div>
+    <div class="col-span-9">
+      <div class="flex gap-6 flex-col">
+        <h2 class="text-xl font-semibold">{{ productData.title }}</h2>
+        <p class="text-gray-400">{{ productData.description }}</p>
+
+        <h3>{{ productData.category.name }}</h3>
+
+        <span class="font-semibold">${{ productData.price }}</span>
+
+        <button class="btn-main my-4">+ Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+}

@@ -1,0 +1,21 @@
+<section
+  class="w-[90%] mx-auto mb-5 bg-black text-white text-center border-2 border-[#777777] rounded-xl p-5 mt-[4rem] md:mt-[1rem]"
+>
+  <div class="flex justify-between">
+    <h1 class="text-xl text-white text-center font-semibold">Orders</h1>
+  </div>
+  @for(item of ordersDetails; track item.id) {
+  <div class="grid grid-cols-12 m-3 gap-3 border-b pb-3">
+    <div class="col-span-12 flex justify-between items-center gap-2">
+      <section class="flex text-left ">
+        <h3>{{ $index}} - </h3>
+        <span>Total order price: {{ item.totalOrderPrice }}</span>
+      </section>
+    </div>
+  </div>
+  } @empty {
+  <div class="flex items-center justify-center min-h-[10rem]">
+    <p class="text-[#777777] text-2xl font-semibold">No Items To Show</p>
+  </div>
+  }
+</section>

@@ -1,0 +1,44 @@
+<div class="w-[90%] mx-auto text-white flex flex-col gap-3 my-6">
+  <section class="flex flex-col md:flex-row justify-between items-center gap-2">
+    @for(item of ["Clean & Professional", "Friendly & Modern", "Trust-Focused",
+    "Bold & Confident", "Minimal & Premium"]; track $index) {
+    <span
+      class="about-headers"
+      (click)="changeCurrentPage($index + 1)"
+      [class.active]="currentPage === $index + 1"
+      >{{ item }}</span
+    >
+    }
+  </section>
+
+  <section
+    class="mx-auto flex items-center justify-center mb-5 bg-black text-white text-center border-2 border-[#777777] rounded-xl min-h-[400px] mt-6 p-5"
+  >
+    @if(currentPage == 1) {
+    <span class="font-semibold px-3">
+      We’re dedicated to delivering quality products that make everyday shopping
+      simple, reliable, and enjoyable.
+    </span>
+    } @else if(currentPage == 2) {
+    <span class="font-semibold px-3">
+      We bring you carefully chosen products that fit your lifestyle—easy to
+      find, easy to love.
+    </span>
+    } @else if(currentPage == 3) {
+    <span class="font-semibold px-3">
+      Built on quality, transparency, and customer care, we’re here to make your
+      online shopping experience better.
+    </span>
+    } @else if(currentPage == 4) {
+    <span class="font-semibold px-3">
+      We don’t just sell products—we curate experiences designed to elevate your
+      everyday life.
+    </span>
+    } @else if(currentPage == 5) {
+    <span class="font-semibold px-3">
+      Thoughtfully selected products, crafted to meet modern needs with lasting
+      value.
+    </span>
+    }
+  </section>
+</div>

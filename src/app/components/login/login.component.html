@@ -1,0 +1,61 @@
+<section class="bg-black text-white shadow-xl h-full w-[75%] mx-auto my-5 rounded-xl border border-yellow-500 p-5">
+  <h1 class="text-main text-center text-2xl md:text-3xl tracking-wider font anton mb-5">login Now</h1>
+  <form class="w-full" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div class="flex gap-3 mx-auto w-fit my-3 flex-col md:flex-row justify-center items-center">
+      <label for="email" class="text-sm">Email</label>
+      <input
+        formControlName="email"
+        class="rounded-sm h-fit text-black px-2"
+        type="email"
+        name="email"
+        [ngClass]="{
+          'border border-red-600 outline-none' : loginForm.get('email')?.errors && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty),
+          'border border-green-600 outline-none' : !loginForm.get('email')?.errors && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty),
+        }"
+      />
+      @if(loginForm.get('email')?.errors &&
+      (loginForm.get('email')?.touched || loginForm.get('email')?.dirty ))
+      { @if(loginForm.get('email')?.getError('required')) {
+      <p class="text-red-500 block">The email is required</p>
+      } @else if(loginForm.get('email')?.getError('email')) {
+      <p class="text-red-500 block">The email is in invaild format</p>
+      } }
+    </div>
+
+    <div class="flex gap-3 mx-auto w-fit my-3 flex-col md:flex-row justify-center items-center">
+      <label for="passowrd" class="text-sm">Password</label>
+      <input
+        formControlName="password"
+        class="rounded-sm h-fit text-black px-2"
+        type="password"
+        name="password"
+        [ngClass]="{
+          'border border-red-600 outline-none' : loginForm.get('password')?.errors && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty),
+          'border border-green-600 outline-none' : !loginForm.get('password')?.errors && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty),
+        }"
+      />
+      @if(loginForm.get('password')?.errors &&
+      (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)) {
+      @if(loginForm.get('password')?.getError('required')) {
+      <p class="text-red-500 block">The password is required</p>
+      } @else if(loginForm.get('password')?.getError('pattern')) {
+      <p class="text-red-500 block">The password is in invaild format</p>
+      } }
+    </div>
+
+    <button
+      [disabled]="loginForm.invalid || isLoading"
+      type="submit"
+      class="bg-yellow-500 md:px-5 w-full py-1 md:py-2 text-black font-bold text-md md:text-lg rounded-lg block mx-auto md:ml-auto mt-5"
+    >
+      login
+    </button>
+
+    @if(errMessage) {
+    <p class="text-black p-3 bg-red-300 my-3">{{ errMessage }}</p>
+    } @if(successMessage) {
+    <p class="text-black p-3 bg-green-300 my-3">{{ successMessage }}</p>
+    }
+  </form>
+</section>

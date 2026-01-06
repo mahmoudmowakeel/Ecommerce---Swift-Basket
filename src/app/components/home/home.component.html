@@ -1,0 +1,91 @@
+<section class="bg-[#333] p-4">
+  <div class="md:w-[85%] mx-auto flex justify-between gap-5 items-center text-white">
+    <span
+      class="bg-yellow-500 w-6 h-6 md:w-10 md:h-10 rounded-full flex justify-center items-center"
+      ><i class="text-black text-md md:text-2xl fa-solid fa-tag"></i
+    ></span>
+    <p class="text-[0.8rem] md:text-[1rem]">
+      <span class="font-semibold">For 2026 we can surprises for you: </span>
+      Enjoy 20% discount of all products now !! Don't miss the chance
+    </p>
+    <button class="border-2 p-2 rounded-lg font-semibold text-[0.6rem] md:text-sm">
+      <a routerLink="/products">Explore products</a>
+    </button>
+  </div>
+</section>
+<section class="h-full">
+  <div class="grid grid-cols-10">
+    <div class="col-span-10 h-full relative">
+      <section
+        class="bg-black bg-opacity-25 w-full min-h-full md:max-h-[300px] max-h-[500px] absolute z-[888] inset-0"
+      ></section>
+      <owl-carousel-o class="relative z-10" [options]="customOptionsMain">
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img1.avif" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img2.avif" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img3.avif" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img4.avif" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img5.avif" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img class="h-full min-h-[200px]" src="./assets/images/img6.avif" alt=""
+        /></ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+
+<section class="w-[95%] mx-auto text-center py-4">
+  <h2 class="font-bold text-3xl tracking-wider my-5  text-yellow-500 py-3 anton ">Popular Categories</h2>
+
+  <div class="w-full md:w-[85%] mx-auto grid grid-cols-2 gap-3 md:flex  md:flex-row justify-between items-center">
+    @for (slide of categoriesList.slice(0,4); track slide._id) {
+    <div class="w-full flex flex-col gap-3 text-white">
+      <div
+        class="relative w-full max-w-[100%] md:max-w-[250px] md:max-h-[250px] rounded-xl overflow-hidden group cursor-pointer"
+      >
+        <img
+          [src]="slide.image"
+          class="w-[100%] h-[150px] md:w-[250px] md:h-[250px] rounded-xl relative object-fill"
+          [alt]="slide.name"
+          [title]="slide.name"
+        />
+        <div
+          class="absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <a class="text-white text-lg font-bold tracking-wide">
+            Explore More
+          </a>
+        </div>
+      </div>
+      <h3 class="text-center md:my-2 my-4 font-bold">{{ slide.name }}</h3>
+    </div>
+    }
+  </div>
+  <owl-carousel-o [options]="customOptions"> </owl-carousel-o>
+</section>
+
+<section class="flex flex-col justify-center items-center">
+  <input
+    [(ngModel)]="text"
+    type="search"
+    class="form-control my-5 px-4 py-2 w-[70%] md:w-[50%] mx-auto border rounded-xl text-sm"
+    placeholder="Search product..."
+  />
+  <h2 class="font-bold text-3xl tracking-wider my-5  text-yellow-500 py-3 anton">Popular Products</h2>
+
+  <div class="grid md:grid-cols-5 grid-cols-2 gap-4 w-[95%] mx-auto my-5">
+    @for(product of productsList.slice(0,12) | search : text ; track product.id)
+    {
+    <app-product-card [product]="product" />
+    }
+  </div>
+</section>

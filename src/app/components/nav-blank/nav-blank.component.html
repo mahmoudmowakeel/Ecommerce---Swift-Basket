@@ -1,0 +1,112 @@
+<div class="w-full bg-[#000000] text-white text-sm">
+  <div class="w-[90%] mx-auto flex justify-between pt-3 pb-2">
+    @if(isopenMenue()) {
+    <div
+      class="fixed inset-0 z-[999] bg-black min-h-screen p-4 overflow-y-auto overscroll-contain"
+    >
+      <span>
+        <i
+          class="fa-solid fa-xmark text-2xl cr"
+          (click)="isopenMenue.set(false)"
+        ></i>
+      </span>
+      <div class="w-[95%] mx-auto py-5 flex flex-col justify-between items-center">
+        <ul
+          class="flex flex-col gap-8 text-white font-semibold text-md w-full text-center"
+        >
+          <li
+            (click)="isopenMenue.set(false)"
+            class="border-b border-b-yellow-500 p-3 w-full text-[1rem]"
+          >
+            <a routerLink="home">Home</a>
+          </li>
+          <li
+            (click)="isopenMenue.set(false)"
+            class="border-b border-b-yellow-500 p-3 w-full text-[1rem]"
+          >
+            <a routerLink="products">Products</a>
+          </li>
+          <li
+            (click)="isopenMenue.set(false)"
+            class="border-b border-b-yellow-500 p-3 w-full text-[1rem]"
+          >
+            <a routerLink="about-us">About us</a>
+          </li>
+          <li (click)="isopenMenue.set(false)" class="relative">
+            <a routerLink="/cart">
+              <i class="text-3xl fa-solid fa-cart-shopping relative"></i>
+              <span
+                class="bottom-0 right-0 bg-yellow-500 text-black font-semibold border border-black shadow-xl rounded-full text-xs px-1"
+                >{{ _CartService.cartItemsNumber() }}</span
+              >
+            </a>
+          </li>
+        </ul>
+
+        <li
+          class="cursor-pointer flex items-center text-xl font-semibold justify-between gap-2 mt-[100px]"
+          (click)="_AuthService.logOut()"
+        >
+          <i class="text-3xl fa-regular fa-circle-user"></i>
+          <a> Sign out </a>
+        </li>
+      </div>
+    </div>
+    }
+    <section class="flex gap-6 items-center">
+      <a routerLink="home">
+        <h1
+          class="text-2xl text-white anton tracking-wider flex items-center gap-4"
+        >
+          <i class="text-xl fa-solid fa-cart-shopping relative"></i>
+
+          <p>Swift<span class="text-yellow-500"> Basket</span></p>
+        </h1>
+      </a>
+    </section>
+    <section class="hidden md:flex items-center">
+      <ul class="flex gap-10 justify-between">
+        <li class="relative">
+          <a routerLink="/cart">
+            <i class="text-xl fa-solid fa-cart-shopping relative"></i>
+            <span
+              class="absolute bottom-0 right-[-0.3rem] bg-yellow-500 text-black font-semibold border border-black shadow-xl rounded-full text-xs px-1"
+              >{{ _CartService.cartItemsNumber() }}</span
+            >
+          </a>
+        </li>
+        <!-- <li>
+          <a class="flex gap-1 justify-center items-center">
+            <i class="text-xl fa-solid fa-globe"></i>
+            <span class="font-bold">EN</span>
+          </a>
+        </li> -->
+        <li
+          class="cursor-pointer flex items-center justify-between gap-2 border-l-2 border-l-pink-50 pl-8"
+          (click)="_AuthService.logOut()"
+        >
+          <i class="text-2xl fa-regular fa-circle-user"></i>
+          <a> Sign out </a>
+        </li>
+      </ul>
+    </section>
+    <button class="md:hidden" (click)="isopenMenue.set(true)">
+      <i class="fa-solid fa-bars text-2xl"></i>
+    </button>
+  </div>
+  <hr />
+  <div class="w-[95%] mx-auto py-5 hidden md:flex justify-center">
+    <ul class="flex gap-8 text-white font-semibold text-md">
+      <li>
+        <a routerLink="home" routerLinkActive="active-link">Home</a>
+      </li>
+      <li>
+        <a routerLink="products" routerLinkActive="active-link">Products</a>
+      </li>
+      <li>
+        <a routerLink="about-us" routerLinkActive="active-link">About us</a>
+      </li>
+      <li></li>
+    </ul>
+  </div>
+</div>

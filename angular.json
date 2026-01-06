@@ -25,6 +25,10 @@
               "src/assets"
             ],
             "styles": [
+               "node_modules/ngx-spinner/animations/square-jelly-box.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -96,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "be301b2a-bec6-419d-8d17-dd17a9aed328"
   }
 }
