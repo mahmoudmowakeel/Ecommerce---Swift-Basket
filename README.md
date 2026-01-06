@@ -1,27 +1,108 @@
-# ECommerce
+# 🛒 Swift Basket — E-Commerce Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Swift Basket is a modern, fully responsive e-commerce web application built with **Angular (Standalone Components)** and styled using **Tailwind CSS**.  
+The application integrates real APIs, secure authentication, Stripe payments, and advanced UX features to deliver a smooth shopping experience.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Live Demo
 
-## Code scaffolding
+🔗 **Live Website:**  
+[> [](https://ecommerce-swift-basket.vercel.app/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🧰 Tech Stack
 
-## Running unit tests
+- **Angular 17+**
+  - Standalone Components
+  - Signals & Modern Angular Architecture
+- **Tailwind CSS**
+  - Fully responsive UI
+- **Ngx-Spinner**
+  - Global loading indicators
+- **Angular Interceptors**
+  - Auth token injection
+  - Global error handling
+- **RESTful API Integration**
+  - Real backend APIs
+- **Stripe Payment Gateway**
+  - Secure online payments
+- **Authentication System**
+  - Login & Register
+  - JWT-based authentication
+- **Font Awesome**
+  - Icons and UI elements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## ✨ Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🛍️ E-Commerce Functionality
+- Browse products
+- Product details page
+- Add to cart
+- Cart quantity management
+- Checkout flow
 
-## Further help
+### 🔐 Authentication
+- User registration
+- User login
+- Secure token-based authentication
+- Protected routes using guards
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 💳 Payments
+- Stripe payment integration
+- Secure checkout process
+
+### ⚡ Performance & UX
+- Global loading spinner using **ngx-spinner**
+- API request handling via **Angular Interceptors**
+- Clean and responsive UI with Tailwind CSS
+
+---
+
+
+---
+
+## 🔄 HTTP Interceptors
+
+- Automatically attach authentication tokens
+- Handle API errors globally
+- Control global loading spinner state
+
+---
+
+## 🔑 Authentication Flow
+
+1. User registers or logs in
+2. Backend returns JWT token
+3. Token stored securely
+4. Interceptor attaches token to all protected API calls
+
+---
+
+## 💳 Stripe Integration
+
+- Secure card payment processing
+- Stripe Checkout session creation via backend
+- Payment confirmation handling
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/mahmoudmowakeel/Ecommerce---Swift-Basket.git
+
+npm install
+
+
+ng serve --port 3000
+
+http://localhost:3000
+
+
+
